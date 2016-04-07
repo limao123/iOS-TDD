@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Question.h"
 
 @interface Topic : NSObject
-@property (readonly,nonatomic) NSString *name;
+@property (copy,readonly,nonatomic) NSString *name;
+@property (copy,readonly,nonatomic) NSString *tag;
+//@property (copy,nonatomic) NSString *
+
+- (instancetype)initWithName:(NSString *)newName tag:(NSString *)tag;
+- (NSArray *)recentQuestions;
+- (void)addQuestion:(Question *)question;
 @end
+

@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 
+
 @interface iOS_TDDLearnCodeTests : XCTestCase
 
 @end
@@ -24,9 +25,12 @@
     [super tearDown];
 }
 
+//- (void)test1
+
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    XCTAssertTrue(YES,@"pass");
 }
 
 - (void)testPerformanceExample {
