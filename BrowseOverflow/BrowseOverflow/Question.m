@@ -10,4 +10,20 @@
 
 @implementation Question
 
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        answerSet = [[NSMutableSet alloc] init];
+    }
+    return self;
+}
+
+- (void)addAnswer:(Answer *)answer{
+    [answerSet addObject:answer];
+}
+
+- (NSArray *)answers{
+    return [[answerSet allObjects] sortedArrayUsingSelector:@selector(compare:)];
+}
+
 @end

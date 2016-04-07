@@ -13,7 +13,7 @@
 @property (copy, nonatomic) NSString *text;
 @property (strong, nonatomic) Person *person;
 @property (unsafe_unretained, nonatomic) NSInteger score;
-@property (unsafe_unretained, nonatomic) BOOL accepted;
+@property (unsafe_unretained,getter=isAccepted,nonatomic) BOOL accepted;
 
 - (NSComparisonResult)compare:(Answer *)otherAnswer;
 @end

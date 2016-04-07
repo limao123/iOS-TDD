@@ -7,9 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Answer.h"
 
-@interface Question : NSObject
+@interface Question : NSObject{
+    NSMutableSet *answerSet;
+}
 @property (strong, nonatomic) NSDate *date;
 @property (copy, nonatomic) NSString *title;
 @property (unsafe_unretained, nonatomic) NSInteger score;
+@property (copy,readonly,nonatomic) NSArray *answers;
+
+- (void)addAnswer:(Answer *)answer;
 @end
