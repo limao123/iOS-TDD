@@ -30,10 +30,12 @@
     person = nil;
 }
 
+//测试是否有正确的名字
 - (void)testThatPersonHasTheRightName{
     XCTAssertEqualObjects(person.name, @"Graham Lee",@"expecting a person to provide its name");
 }
 
+//测试是否含有avatarURL 
 - (void)testThatPersonHasAnAvatarURL{
     NSURL *url = person.avatarURL;
     XCTAssertEqualObjects([url absoluteString], @"http://example.com/avatar.png",@"The Person's avatar should be represented by a URL");

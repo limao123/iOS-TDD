@@ -50,29 +50,36 @@
     highScore = nil;
 }
 
+
+//测试问题是否含有日期值
 - (void)testQuestionHasADate{
     NSDate *testDate = [NSDate distantPast];
     question.date = testDate;
     XCTAssertEqualObjects(question.date, testDate,@"Question needs to provide its date");
 }
 
+//测试问题是否含score
 - (void)testQuestionsKeepScore{
     XCTAssertEqual(question.score, 42,@"Question need a numeric score");
 }
 
+//测试问题是否含title
 - (void)testQuestionHasATitle{
     XCTAssertEqualObjects(question.title, @"Do iPhones also dream of electric sheep?",@"Question should know its title");
 }
 
+//测试是否可以正确添加一个答案
 - (void)testQuestionCanHaveAnswersAdded{
     Answer *myAnswer = [[Answer alloc] init];
     XCTAssertNoThrow([question addAnswer:myAnswer],@"Must be able to add answers");
 }
 
+//测试被接收的答案是否排在最前面
 - (void)testAcceptedAnswerIsFirst{
     XCTAssertTrue([[question.answers objectAtIndex:0] isAccepted],@"Accepted answer comes first");
 }
 
+//测试分数高的答案是否排在分数低的前面
 - (void)testHighScoreAnswerBeforeLow{
     NSArray *answers = question.answers;
     NSInteger highIndex = [answers indexOfObject:highScore];
