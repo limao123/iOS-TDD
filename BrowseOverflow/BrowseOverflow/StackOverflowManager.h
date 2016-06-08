@@ -11,6 +11,7 @@
 #import "MockStackOverflowCommunicator.h"
 #import "StackOverflowCommunicator.h"
 #import "Topic.h"
+//#import "QuestionBuilder.h"
 #import "QuestionBuilder.h"
 
 extern NSString *StackOverflowManagerError;
@@ -20,6 +21,7 @@ enum {
 };
 
 @interface StackOverflowManager : NSObject
+
 @property (weak, nonatomic) id<StackOverflowManagerDelegate> delegate;
 @property (strong, nonatomic) StackOverflowCommunicator *communicator;
 @property (strong, nonatomic) QuestionBuilder *questionBuilder;
